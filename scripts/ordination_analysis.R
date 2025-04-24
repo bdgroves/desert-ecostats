@@ -20,9 +20,15 @@ dev.off()
 site.scores <- as.data.frame(scores(nmds, display = "sites"))
 site.scores$Plot <- rownames(site.scores)
 
-ggplot(site.scores, aes(x = NMDS1, y = NMDS2, label = Plot)) +
+# Create the NMDS plot object
+nmds_plot <- ggplot(site.scores, aes(x = NMDS1, y = NMDS2, label = Plot)) +
   geom_point(color = "darkgreen", size = 4) +
   geom_text(vjust = -1, size = 4) +
   theme_minimal() +
-  labs(title = "NMDS Ordination of Desert Community Plots") +
-  ggsave("plots/nmds_plot_ggplot.pdf")
+  labs(title = "NMDS Ordination of Desert Community Plots")
+
+# Display it (optional)
+print(nmds_plot)
+
+# Save the plot
+ggsave("plots/nmds_plot_ggplot.pdf", plot = nmds_plot, width = 7, height = 7)
