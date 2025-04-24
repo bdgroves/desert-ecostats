@@ -1,0 +1,20 @@
+Call:
+cooccur(mat = pa_matrix, type = "spp_site", thresh = TRUE, spp_names = TRUE)
+
+Of 21 species pair combinations, 0 pairs (0 %) were removed from the analysis because expected co-occurrence was < 1 and 21 pairs were analyzed
+
+Cooccurrence Summary:
+       Species          Sites       Positive       Negative         Random Unclassifiable 
+           7.0           12.0            1.0            0.0           19.0            1.0 
+Non-random (%) 
+           4.8 
+attr(,"class")
+[1] "summary.cooccur"
+Call:
+cooccur(mat = pa_matrix, type = "spp_site", thresh = TRUE, spp_names = TRUE)
+
+Of 21 species pair combinations, 0 pairs (0 %) were removed from the analysis because expected co-occurrence was < 1 and 21 pairs were analyzed
+
+Cooccurrence Table:
+  sp1 sp2 sp1_inc sp2_inc obs_cooccur prob_cooccur exp_cooccur p_lt    p_gt  sp1_name sp2_name
+3   1   4       9       7           7        0.438         5.2    1 0.04545 SandyDune  DryWash
