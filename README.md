@@ -1,14 +1,3 @@
----
-editor_options: 
-  markdown: 
-    wrap: 72
----
-
-Awesome — here's a clean and useful **README-style Markdown summary**
-you can include in your GitLab repo (`desert-ecostats`). It documents
-your workflow and explains the purpose of each script in plain language,
-perfect for collaborators, future-you, or even reviewers.
-
 ------------------------------------------------------------------------
 
 ``` markdown
@@ -45,10 +34,7 @@ Raw Community Matrix
 
 ### `diversity_summary.R`
 
-🧮 Calculates basic biodiversity metrics per plot. - **Richness**: \# of
-species - **Shannon & Simpson**: Diversity indices - **Evenness**: How
-evenly species are distributed - **Rarefaction Curve**: Sampling effort
-vs. richness
+🧮 Calculates basic biodiversity metrics per plot. - **Richness**: \# of species - **Shannon & Simpson**: Diversity indices - **Evenness**: How evenly species are distributed - **Rarefaction Curve**: Sampling effort vs. richness
 
 📤 Outputs: - `diversity_summary.csv` - `rarefaction_curve.pdf`
 
@@ -56,24 +42,17 @@ vs. richness
 
 ### `ordination_nmds.R`
 
-📊 Performs **Non-metric Multidimensional Scaling (NMDS)** using
-Bray-Curtis dissimilarity. - Reduces high-dimensional data into 2D -
-Useful for identifying patterns in species composition
+📊 Performs **Non-metric Multidimensional Scaling (NMDS)** using Bray-Curtis dissimilarity. - Reduces high-dimensional data into 2D - Useful for identifying patterns in species composition
 
-📤 Outputs: - `nmds_plot.pdf` (base R) - `nmds_plot_ggplot.pdf`
-(optional: cleaner ggplot version)
+📤 Outputs: - `nmds_plot.pdf` (base R) - `nmds_plot_ggplot.pdf` (optional: cleaner ggplot version)
 
 ------------------------------------------------------------------------
 
 ### `cooccurrence_analysis.R`
 
-🔗 Uses the `cooccur` package to analyze non-random species
-co-occurrences. - Converts data to presence/absence - Identifies
-significant positive or negative pairings
+🔗 Uses the `cooccur` package to analyze non-random species co-occurrences. - Converts data to presence/absence - Identifies significant positive or negative pairings
 
-📤 Outputs: - `cooccurrence_summary.txt` (summary of interactions) -
-`all_species_pairs.csv` (all pairwise results) - `cooccurrence_plot.pdf`
-(heatmap visualization)
+📤 Outputs: - `cooccurrence_summary.txt` (summary of interactions) - `all_species_pairs.csv` (all pairwise results) - `cooccurrence_plot.pdf` (heatmap visualization)
 
 ------------------------------------------------------------------------
 
@@ -114,10 +93,3 @@ install.packages(c("vegan", "cooccur", "ggplot2"))
 -   Constrained ordination (CCA/RDA)
 -   Indicator species analysis
 -   Integration of habitat metadata \`\`\`
-
-------------------------------------------------------------------------
-
-Want me to generate this into an actual `.md` file and save it into your
-repo? Or we could jump straight into the next method you’d like to
-implement (e.g., **CCA**, **habitat overlays**, or **species
-accumulation**)?
