@@ -59,6 +59,10 @@ Raw Community Matrix
 🗺️ Generates a simple map of California counties **with county labels** using the `maps` package.
 
 📤 Outputs: - `california_counties_map.pdf`
+### `desert_constrained_ordination_app.R`
+
+🖥️ Interactive Shiny app to perform constrained ordination (RDA or CCA) on simulated desert data. Choose the method, run the analysis, and view the ordination plot plus printed summary.
+
 
 
 ------------------------------------------------------------------------
@@ -68,7 +72,9 @@ Raw Community Matrix
 ``` plaintext
 desert-ecostats/
 ├── data/
-│   └── example_community_matrix.csv
+│   ├── example_community_matrix.csv
+│   ├── desert_community_matrix.csv
+│   └── desert_environmental_data.csv
 ├── plots/
 │   ├── diversity_summary.csv
 │   ├── rarefaction_curve.pdf
@@ -79,7 +85,8 @@ desert-ecostats/
 │   ├── diversity_summary.R
 │   ├── ordination_nmds.R
 │   ├── cooccurrence_analysis.R
-│   └── map_california_counties.R
+│   ├── map_california_counties.R
+│   └── desert_constrained_ordination_app.R
 └── README.md  ← You are here
 ```
 
@@ -88,10 +95,10 @@ desert-ecostats/
 ## 🔧 Requirements
 
 -   R ≥ 4.2
--   Packages: `vegan`, `cooccur`, `ggplot2` (optional), `maps`
+-   Packages: `vegan`, `cooccur`, `ggplot2`, `shiny`, `maps`
 
 ``` r
-install.packages(c("vegan", "cooccur", "ggplot2", "maps"))
+install.packages(c("vegan", "cooccur", "ggplot2", "shiny", "maps"))
 ```
 
 ------------------------------------------------------------------------
