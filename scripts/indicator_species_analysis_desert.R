@@ -12,6 +12,10 @@ library(gifski)
 library(leaflet)
 library(htmlwidgets)
 
+# ---- Ensure Output Folders Exist ----
+if (!dir.exists("plots")) dir.create("plots")
+if (!dir.exists("data")) dir.create("data")
+
 # ---- 1. Simulated Community Matrix (Species x Site) ----
 set.seed(42)
 
@@ -51,7 +55,7 @@ indicators$Habitat <- gsub("^s\\.", "", indicators$Habitat)
 significant <- subset(indicators, p.value <= 0.05)
 
 # ---- 6. Export Results ----
-write.csv(significant, "significant_indicator_species.csv", row.names = FALSE)
+write.csv(significant, "data/significant_indicator_species.csv", row.names = FALSE)
 
 # ---- 7. Plot and Save Bar Chart ----
 if (nrow(significant) > 0) {
@@ -66,7 +70,7 @@ if (nrow(significant) > 0) {
     ) +
     theme_minimal()
   
-  ggsave("indicator_species_plot.png", plot = p, width = 8, height = 5)
+  ggsave("plots/indicator_species_plot.png", plot = p, width = 8, height = 5)
   print(p)
 } else {
   message("⚠️ No significant indicator species found.")
@@ -95,7 +99,7 @@ anim_plot <- ggplot(site_map_time, aes(x = Longitude, y = Latitude, color = Habi
   ease_aes("cubic-in-out")
 
 animate(anim_plot, width = 600, height = 500, fps = 2,
-        renderer = gifski_renderer("site_map_seasonal.gif"))
+        renderer = gifski_renderer("plots/site_map_seasonal.gif"))
 
 # ---- 10. Interactive Site Map with Leaflet ----
 habitat_pal <- colorFactor(palette = "Set2", domain = site_coords$Habitat)
@@ -113,4 +117,4 @@ leaflet_map <- leaflet(site_coords) %>%
             title = "Habitat Type", opacity = 1)
 
 leaflet_map
-htmlwidgets::saveWidget(leaflet_map, "site_map_leaflet.html", selfcontained = TRUE)
+htmlwidgets::saveWidget(leaflet_map, "plots/site_map_leaflet.html", selfcontained = TRUE)
