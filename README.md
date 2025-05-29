@@ -59,6 +59,13 @@ Raw Community Matrix
 🗺️ Generates a simple map of California counties **with county labels** using the `maps` package.
 
 📤 Outputs: - `california_counties_map.pdf`
+
+### `permanova_nmds.R`
+
+🔄 Simulates desert community data, runs a PERMANOVA test across habitat
+types, and visualizes results with an NMDS plot colored by habitat.
+
+📤 Outputs: - `permanova_results.csv` - `nmds_habitat.png`
 ### `desert_constrained_ordination_app.R`
 
 🖥️ Interactive Shiny app to perform constrained ordination (RDA or CCA) on simulated desert data. Choose the method, run the analysis, and view the ordination plot plus printed summary.
@@ -86,6 +93,7 @@ desert-ecostats/
 │   ├── ordination_nmds.R
 │   ├── cooccurrence_analysis.R
 │   ├── map_california_counties.R
+│   ├── permanova_nmds.R
 │   └── desert_constrained_ordination_app.R
 └── README.md  ← You are here
 ```
