@@ -21,16 +21,7 @@ if (!dir.exists(here("plots"))) dir.create(here("plots"))
 set.seed(123)
 
 n_sites <- 30
-# Define habitat factor with descriptive names for each third of the sites
-habitats <- factor(rep(c("Sandy Wash", "Rocky Slope", "Gravel Flat"),
-                       each = n_sites / 3))
 
-# Species abundance matrix (sites x species)
-# Four representative desert species with habitat-specific means
-community <- data.frame(
-  Rattlesnake = rpois(n_sites, ifelse(habitats == "Rocky Slope", 6, 2)),
-  Lizard      = rpois(n_sites, ifelse(habitats == "Sandy Wash", 5, 2)),
-  Ant         = rpois(n_sites, ifelse(habitats == "Gravel Flat", 4, 1)),
   Creosote    = rpois(n_sites, ifelse(habitats == "Gravel Flat", 7, 3))
 )
 rownames(community) <- paste0("Site", seq_len(n_sites))
@@ -66,10 +57,13 @@ scores_df <- as.data.frame(scores(nmds, display = "sites"))
 scores_df$Habitat <- env$Habitat
 
 nmds_plot <- ggplot(scores_df, aes(x = NMDS1, y = NMDS2, color = Habitat)) +
+  stat_ellipse(aes(fill = Habitat), type = "norm", level = 0.95,
+               geom = "polygon", alpha = 0.2, colour = NA) +
   geom_point(size = 3) +
-  theme_minimal() +
+  theme_bw() +
   labs(title = "NMDS of Desert Community Composition",
-       color = "Habitat")
+       x = "NMDS1", y = "NMDS2",
+       color = "Habitat", fill = "Habitat")
 
 # Save NMDS plot as PNG
 ggsave(filename = here("plots", "nmds_habitat.png"), plot = nmds_plot,
