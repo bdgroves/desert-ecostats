@@ -1,0 +1,13 @@
+Site,Elevation,Soil_Moisture,Habitat
+Site1,450,7,Dune
+Site2,460,6,Dune
+Site3,470,8,Dune
+Site4,455,7,Dune
+Site5,650,12,Rocky
+Site6,630,11,Rocky
+Site7,670,13,Rocky
+Site8,680,14,Rocky
+Site9,950,22,Shrubland
+Site10,960,24,Shrubland
+Site11,940,23,Shrubland
+Site12,970,21,Shrubland
