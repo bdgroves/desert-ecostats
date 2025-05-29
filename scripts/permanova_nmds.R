@@ -23,7 +23,7 @@ set.seed(123)
 n_sites <- 30
 
   Creosote    = rpois(n_sites, ifelse(habitats == "Gravel Flat", 7, 3))
-)
+
 rownames(community) <- paste0("Site", seq_len(n_sites))
 
 # Environmental data frame
