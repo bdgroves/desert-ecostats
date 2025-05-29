@@ -21,15 +21,17 @@ if (!dir.exists(here("plots"))) dir.create(here("plots"))
 set.seed(123)
 
 n_sites <- 30
-habitats <- factor(rep(c("Wash", "Slope", "Flat"), each = n_sites / 3))
+# Define habitat factor with descriptive names for each third of the sites
+habitats <- factor(rep(c("Sandy Wash", "Rocky Slope", "Gravel Flat"),
+                       each = n_sites / 3))
 
 # Species abundance matrix (sites x species)
+# Four representative desert species with habitat-specific means
 community <- data.frame(
-  Rattlesnake   = rpois(n_sites, ifelse(habitats == "Slope", 6, 2)),
-  WhiptailLizard = rpois(n_sites, ifelse(habitats == "Wash", 5, 2)),
-  Gecko          = rpois(n_sites, ifelse(habitats == "Flat", 4, 1)),
-  CreosoteBush   = rpois(n_sites, ifelse(habitats == "Flat", 7, 3)),
-  ChollaCactus   = rpois(n_sites, ifelse(habitats == "Slope", 5, 2))
+  Rattlesnake = rpois(n_sites, ifelse(habitats == "Rocky Slope", 6, 2)),
+  Lizard      = rpois(n_sites, ifelse(habitats == "Sandy Wash", 5, 2)),
+  Ant         = rpois(n_sites, ifelse(habitats == "Gravel Flat", 4, 1)),
+  Creosote    = rpois(n_sites, ifelse(habitats == "Gravel Flat", 7, 3))
 )
 rownames(community) <- paste0("Site", seq_len(n_sites))
 
