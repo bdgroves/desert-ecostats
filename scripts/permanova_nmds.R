@@ -21,19 +21,7 @@ if (!dir.exists(here("plots"))) dir.create(here("plots"))
 set.seed(123)
 
 n_sites <- 30
-# Habitat types used in the simulation
-# "Sandy Wash", "Rocky Slope", and "Gravel Flat"
-habitats <- factor(
-  rep(c("Sandy Wash", "Rocky Slope", "Gravel Flat"), each = n_sites / 3),
-  levels = c("Sandy Wash", "Rocky Slope", "Gravel Flat")
-)
 
-# Species abundance matrix (sites x species)
-# Four species: Rattlesnake, Lizard, Ant, and Creosote
-community <- data.frame(
-  Rattlesnake = rpois(n_sites, ifelse(habitats == "Rocky Slope", 6, 2)),
-  Lizard      = rpois(n_sites, ifelse(habitats == "Sandy Wash", 5, 2)),
-  Ant         = rpois(n_sites, ifelse(habitats == "Gravel Flat", 8, 3)),
   Creosote    = rpois(n_sites, ifelse(habitats == "Gravel Flat", 7, 3))
 )
 rownames(community) <- paste0("Site", seq_len(n_sites))
