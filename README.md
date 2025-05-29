@@ -54,6 +54,13 @@ Raw Community Matrix
 
 📤 Outputs: - `cooccurrence_summary.txt` (summary of interactions) - `all_species_pairs.csv` (all pairwise results) - `cooccurrence_plot.pdf` (heatmap visualization)
 
+### `map_california_counties.R`
+
+🗺️ Generates a simple map of California counties using the `maps` package.
+
+📤 Outputs: - `california_counties_map.pdf`
+
+
 ------------------------------------------------------------------------
 
 ## 📂 Directory Structure
@@ -71,7 +78,8 @@ desert-ecostats/
 ├── scripts/
 │   ├── diversity_summary.R
 │   ├── ordination_nmds.R
-│   └── cooccurrence_analysis.R
+│   ├── cooccurrence_analysis.R
+│   └── map_california_counties.R
 └── README.md  ← You are here
 ```
 
@@ -80,10 +88,10 @@ desert-ecostats/
 ## 🔧 Requirements
 
 -   R ≥ 4.2
--   Packages: `vegan`, `cooccur`, `ggplot2` (optional)
+-   Packages: `vegan`, `cooccur`, `ggplot2` (optional), `maps`
 
 ``` r
-install.packages(c("vegan", "cooccur", "ggplot2"))
+install.packages(c("vegan", "cooccur", "ggplot2", "maps"))
 ```
 
 ------------------------------------------------------------------------
