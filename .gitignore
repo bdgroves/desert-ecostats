@@ -47,3 +47,23 @@ po/*~
 
 # RStudio Connect folder
 rsconnect/
+
+# Jupyter / Python
+.ipynb_checkpoints/
+__pycache__/
+*.pyc
+.env
+
+# Generated plot outputs (run scripts locally to reproduce)
+plots/*.pdf
+plots/*.png
+plots/*.gif
+plots/*.html
+plots/site_map_leaflet_files/
+
+# Generated data outputs
+plots/diversity_summary.csv
+plots/all_species_pairs.csv
+plots/cooccurrence_summary.txt
+plots/permanova_results.csv
+plots/significant_indicator_species.csv
